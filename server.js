@@ -4,7 +4,10 @@ const { authentication } = require("./middlewares/authentication");
 const { connection } = require("./config/db");
 const { blogController } = require("./controllers/blog.controller");
 const { userController } = require("./controllers/user.controller");
+const cors = require("cors");
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 app.use("/user", userController);
 app.use(authentication);
