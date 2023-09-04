@@ -9,6 +9,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.json("base api");
+});
 app.use("/user", userController);
 app.use(authentication);
 app.use("/blogs", blogController);
